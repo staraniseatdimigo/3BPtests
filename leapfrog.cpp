@@ -19,7 +19,7 @@ int main() {
     {
         if(updatePos)
         {
-            cout<<"�ð� : "<< t <<"��, ��ġ : "<< s <<"m, �ӵ�+(dT/2) : "<< v12 <<"m/s"<<endl;
+            cout<<"½Ã°£ : "<< t <<"ÃÊ, À§Ä¡ : "<< s <<"m, ¼Óµµ+(dT/2) : "<< v12 <<"m/s"<<endl;
             s += v12 * dT;
             updatePos = false;
             t += dT;
