@@ -19,7 +19,7 @@ int main() {
     {
         if(updatePos)
         {
-            cout<<"½Ã°£ : "<< t <<"ÃÊ, À§Ä¡ : "<< s <<"m, ¼Óµµ+(dT/2) : "<< v12 <<"m/s"<<endl;
+            cout<<"시간 : "<< t <<"초, 위치 : "<< s <<"m, 속도+(dT/2) : "<< v12 <<"m/s"<<endl;
             s += v12 * dT;
             updatePos = false;
             t += dT;
