@@ -105,21 +105,26 @@ public:
 
 void calculateAcc(Planet p1, Planet p2) { // 가속도 계산 함수
     double x, y, z;
-    double r_square;
+    double r_squared;
 
     x = p2.pos.x - p1.pos.x;
     y = p2.pos.y - p1.pos.y;
     z = p2.pos.z - p1.pos.z;
 
-    r = x * x + y * y + z * z;
+    r_squared = x * x + y * y + z * z;
 
-    p1.acc.x = G * p2.m / r*r*r * x;
-    p1.acc.y = G * p2.m / r*r*r * y;
-    p1.acc.z = G * p2.m / r*r*r * z;
+    gp1m = G * p1.m;
+    gp2m = G * p2.m;
 
-    p2.acc.x = G * p2.m / r*r*r * -x;
-    p2.acc.y = G * p2.m / r*r*r * -y;
-    p2.acc.z = G * p2.m / r*r*r * -z;
+    r_cubed = r_squared * sqrt(r_squared);
+
+    p1.acc.x = gp2m / r_cubed * x;
+    p1.acc.y = gp2m / r_cubed * y;
+    p1.acc.z = gp2m / r_cubed * z;
+
+    p2.acc.x = gp1m / r_cubed * -x;
+    p2.acc.y = gp1m / r_cubed * -y;
+    p2.acc.z = gp1m / r_cubed * -z;
 }
 
 void render(double dT, Planet p) // dT만큼의 시간을 지속시킴
